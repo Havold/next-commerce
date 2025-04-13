@@ -13,7 +13,7 @@ const Menu = () => {
         onClick={() => setOpen(!open)}
       />
       {open && (
-        <div className="flex flex-col justify-center items-center gap-8 absolute bg-black text-white left-0 top-20 w-full h-[calc(100vh-80px)]">
+        <div className="flex flex-col justify-center items-center z-20 gap-8 absolute bg-black text-white left-0 top-20 w-full h-[calc(100vh-80px)]">
           <Link href="#">Homepage</Link>
           <Link href="#">Shop</Link>
           <Link href="#">Deals</Link>
