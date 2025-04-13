@@ -3,7 +3,7 @@ import { ShoppingCartOutlined } from "@mui/icons-material";
 import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import CartModal from "./CartModal";
-import { AuthContext } from "@/app/context/AuthContext";
+import { AuthContext } from "@/context/authContext";
 
 const ShoppingCart = () => {
   const [open, setOpen] = useState(false);

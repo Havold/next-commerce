@@ -1,5 +1,5 @@
 "use client";
-import { AuthContext } from "@/app/context/AuthContext";
+import { AuthContext } from "@/context/authContext";
 import { LogoutRounded, PersonOutlineRounded } from "@mui/icons-material";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
