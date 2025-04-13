@@ -2,11 +2,9 @@ import React from "react";
 import Menu from "./Menu";
 import Link from "next/link";
 import SearchBar from "./SearchBar";
-import {
-  NotificationsNoneRounded,
-  PersonOutlineRounded,
-} from "@mui/icons-material";
+import { NotificationsNoneRounded } from "@mui/icons-material";
 import ShoppingCart from "./ShoppingCart";
+import ProfileIcon from "./ProfileIcon";
 
 const Navbar = () => {
   return (
@@ -37,9 +35,7 @@ const Navbar = () => {
         {/* RIGHT */}
         <div className="w-2/3 flex gap-8 items-center justify-end">
           <SearchBar />
-          <Link href="#">
-            <PersonOutlineRounded className="cursor-pointer" fontSize="small" />
-          </Link>
+          <ProfileIcon />
           <Link href="#">
             <NotificationsNoneRounded
               className="cursor-pointer"
