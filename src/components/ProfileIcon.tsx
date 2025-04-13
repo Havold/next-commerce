@@ -1,20 +1,21 @@
 "use client";
+import { AuthContext } from "@/app/context/AuthContext";
 import { LogoutRounded, PersonOutlineRounded } from "@mui/icons-material";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 const ProfileIcon = () => {
   const router = useRouter();
   const [modalOpen, setModalOpen] = useState(false);
-  const [login, setLogin] = useState(false);
+  const { isAuth } = useContext(AuthContext);
   return (
     <div className="relative">
       <PersonOutlineRounded
         className="cursor-pointer"
         fontSize="small"
         onClick={() => {
-          if (!login) {
+          if (!isAuth) {
             router.push("/login");
           } else setModalOpen(!modalOpen);
         }}

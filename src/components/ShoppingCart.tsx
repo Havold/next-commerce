@@ -1,13 +1,16 @@
 "use client";
 import { ShoppingCartOutlined } from "@mui/icons-material";
-import React, { useState } from "react";
-import CartItem from "./CartItem";
+import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import CartModal from "./CartModal";
+import { AuthContext } from "@/app/context/AuthContext";
 
 const ShoppingCart = () => {
   const [open, setOpen] = useState(false);
-  const [login, setLogin] = useState(true);
+  const { isAuth, setIsAuth } = useContext(AuthContext);
+  useEffect(() => {
+    console.log("Navbar isAuth:", isAuth);
+  }, [isAuth]);
   const router = useRouter();
 
   return (
@@ -15,11 +18,11 @@ const ShoppingCart = () => {
       <ShoppingCartOutlined
         fontSize="small"
         onClick={() => {
-          if (!login) router.push("/login");
+          if (!isAuth) router.push("/login");
           else setOpen(!open);
         }}
       />
-      {login ? (
+      {isAuth ? (
         <div
           className="absolute top-[-6px] right-[-8px] w-4 h-4 rounded-full bg-[var(--primary)] text-[10px] text-white text-center"
           onClick={() => {
