@@ -7,12 +7,15 @@
   --secondaryText: #7c7c7c;
   --primary: #C084FC;
   --secondary: #D8B4FE;
+  --primaryBtn: #000000;
+  --secondaryBtn: transparent; 
 }
 
 @theme {
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-secondary-text: var(--secondaryText);
+  --color-primary-btn: var(--primaryBtn);
 }
 
 
