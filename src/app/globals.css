@@ -8,7 +8,8 @@
   --primary: #C084FC;
   --secondary: #D8B4FE;
   --primaryBtn: #000000;
-  --secondaryBtn: transparent; 
+  --secondaryBtn: transparent;
+  --purpleGradient: #CAC2D7;
 }
 
 @theme {
@@ -16,6 +17,7 @@
   --color-secondary: var(--secondary);
   --color-secondary-text: var(--secondaryText);
   --color-primary-btn: var(--primaryBtn);
+  --color-purple-gradient: var(--purpleGradient);
 }
 
 
@@ -41,6 +43,40 @@
     -webkit-box-shadow: 0px 1px 16px -5px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 1px 16px -5px rgba(0,0,0,0.75);
   }
+
+  .shadow-custom-sm {
+    box-shadow: 0px 1px 16px -5px rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0px 1px 16px -5px rgba(0,0,0,0.12);
+    -moz-box-shadow: 0px 1px 16px -5px rgba(0,0,0,0.12);
+  }
+
+  .gradient-purple-custom {
+    background: #dbcef2;
+    background: linear-gradient(0deg, rgba(231, 216, 255, 0.6) 0%, rgba(237, 221, 83, 0) 38%);
+  }
+
+  .popup-effect {
+    animation: popup 0.1s ease forwards;
+  }
+
+  .hover-effect {
+    transition: all 0.5s ease-in-out;
+  }
+
+  .hover-effect:hover {
+    opacity: 0.8;
+    scale: 0.9;
+  }
+  
+
+  @keyframes popup {
+    from {
+      scale: 0.8;
+    } to {
+      scale: 1;
+    }
+  }
+  
 }
 
 body {
