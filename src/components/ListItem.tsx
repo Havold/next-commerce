@@ -1,7 +1,9 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import FavoriteIcon from "./FavoriteIcon";
+import { makeRequest } from "@/app/axios";
 
 type ListItemProps = {
   id: string | number;
@@ -20,6 +22,13 @@ const ListItem: React.FC<ListItemProps> = ({
   price,
   favorite = false,
 }) => {
+  const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const cart = { value: "Hello World" };
+    const response = await makeRequest.post("/payment-service", { cart });
+    console.log(response);
+    // console.log("Hello");
+  };
   return (
     <div className="relative w-full md:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)] h-[60vh] md:h-[42vh] lg:h-[62vh] xl:h-[60vh] px-3 py-6 rounded-3xl overflow-hidden shadow-custom-sm">
       <FavoriteIcon key={id} itemId={id} favorite={favorite} />
@@ -57,7 +66,10 @@ const ListItem: React.FC<ListItemProps> = ({
           </span>
         </div>
         {/* RIGHT */}
-        <button className="w-[48px] md:w-[40px] lg:w-[60px] h-[48px] md:h-[40px] lg:h-[60px] rounded-full bg-secondary text-[32px] md:text-[24px] lg:text-[32px] font-extralight cursor-pointer hover-effect">
+        <button
+          onClick={handleClick}
+          className="w-[48px] md:w-[40px] lg:w-[60px] h-[48px] md:h-[40px] lg:h-[60px] rounded-full bg-secondary text-[32px] md:text-[24px] lg:text-[32px] font-extralight cursor-pointer hover-effect"
+        >
           +
         </button>
       </div>
